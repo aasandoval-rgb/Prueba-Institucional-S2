@@ -1,0 +1,203 @@
+/* Dos paletas, cada una con modo claro y oscuro.
+   Los componentes usan variables con nombre de función (fondo, texto, primario...)
+   y cada combinación de data-paleta + data-tema (en <html>) les da otros valores.
+
+   Paleta "retro": Wine #4B1719 · Lemonade #F2EBCB · The Eighties #304767
+   Paleta "rosa":  Velvet Luxe #78061F · Sugar Rim #CB7288 · Soft Cashmere #EDC6C9 · Morning Matcha #B5C56D */
+
+/* ---------- Retro · claro (valores por defecto) ---------- */
+:root,
+:root[data-tema='claro'] {
+  --fondo: #f2ebcb;
+  --superficie: #faf6e2;
+  --texto: #4b1719;
+  --suave: #6b4446;
+  --linea: rgba(75, 23, 25, 0.28);
+
+  --encabezado: #304767;
+  --sobre-encabezado: #f2ebcb;
+  --franja1: #e3d8a6;
+  --franja2: #4b1719;
+
+  --primario: #304767;
+  --primario-hover: #3d5a82;
+  --sobre-primario: #f2ebcb;
+
+  --realce: #4b1719;
+  --sobre-realce: #f2ebcb;
+  --fondo-stat-vino: #4b1719;
+
+  --activo: #4b1719;
+  --sobre-activo: #f2ebcb;
+
+  --tinte-azul: #cbd5e4;
+  --tinte-limonada: #e3d8a6;
+  --pista: #f2ebcb;
+
+  --sombra: #304767;
+  --sombra-btn: #4b1719;
+  --peligro: #9e2a2f;
+
+  color-scheme: light;
+}
+
+/* ---------- Retro · oscuro ---------- */
+:root[data-tema='oscuro'] {
+  --fondo: #4b1719;
+  --superficie: #304767;
+  --texto: #f2ebcb;
+  --suave: rgba(242, 235, 203, 0.78);
+  --linea: rgba(242, 235, 203, 0.35);
+
+  --encabezado: #304767;
+  --sobre-encabezado: #f2ebcb;
+  --franja1: #f2ebcb;
+  --franja2: #304767;
+
+  --primario: #f2ebcb;
+  --primario-hover: #e0d6a8;
+  --sobre-primario: #4b1719;
+
+  --realce: #4b1719;
+  --sobre-realce: #f2ebcb;
+  --fondo-stat-vino: #304767;
+
+  --activo: #f2ebcb;
+  --sobre-activo: #4b1719;
+
+  --tinte-azul: rgba(242, 235, 203, 0.1);
+  --tinte-limonada: rgba(242, 235, 203, 0.18);
+  --pista: rgba(242, 235, 203, 0.2);
+
+  --sombra: #2a0a0c;
+  --sombra-btn: #2a0a0c;
+  --peligro: #ffb0b4;
+
+  color-scheme: dark;
+}
+
+/* ---------- Rosa · claro ---------- */
+:root[data-paleta='rosa'][data-tema='claro'] {
+  --fondo: #edc6c9;
+  --superficie: #f8e7e8;
+  --texto: #78061f;
+  --suave: #86414e;
+  --linea: rgba(120, 6, 31, 0.28);
+
+  --encabezado: #78061f;
+  --sobre-encabezado: #edc6c9;
+  --franja1: #b5c56d;
+  --franja2: #cb7288;
+
+  --primario: #78061f;
+  --primario-hover: #9a1a38;
+  --sobre-primario: #edc6c9;
+
+  --realce: #b5c56d;
+  --sobre-realce: #78061f;
+  --fondo-stat-vino: #b5c56d;
+
+  --activo: #78061f;
+  --sobre-activo: #edc6c9;
+
+  --tinte-azul: #e8afbb;
+  --tinte-limonada: #d7e2a8;
+  --pista: #edc6c9;
+
+  --sombra: #cb7288;
+  --sombra-btn: #78061f;
+  --peligro: #c4123f;
+
+  color-scheme: light;
+}
+
+/* ---------- Rosa · oscuro ---------- */
+:root[data-paleta='rosa'][data-tema='oscuro'] {
+  --fondo: #78061f;
+  --superficie: #5c0419;
+  --texto: #edc6c9;
+  --suave: rgba(237, 198, 201, 0.78);
+  --linea: rgba(237, 198, 201, 0.35);
+
+  --encabezado: #5c0419;
+  --sobre-encabezado: #edc6c9;
+  --franja1: #b5c56d;
+  --franja2: #cb7288;
+
+  --primario: #b5c56d;
+  --primario-hover: #c6d58a;
+  --sobre-primario: #78061f;
+
+  --realce: #cb7288;
+  --sobre-realce: #3d0310;
+  --fondo-stat-vino: #cb7288;
+
+  --activo: #b5c56d;
+  --sobre-activo: #78061f;
+
+  --tinte-azul: rgba(237, 198, 201, 0.1);
+  --tinte-limonada: rgba(237, 198, 201, 0.18);
+  --pista: rgba(237, 198, 201, 0.2);
+
+  --sombra: #3d0310;
+  --sombra-btn: #3d0310;
+  --peligro: #ffb4a8;
+
+  color-scheme: dark;
+}
+
+:root {
+  font-family: 'Avenir Next', 'Segoe UI', Roboto, system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--texto);
+  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--fondo);
+  transition: background 0.25s;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--primario-hover);
+  outline-offset: 2px;
+}
+
+.icono {
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
